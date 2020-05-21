@@ -199,10 +199,10 @@ router.get('/home', (req ,res) => {
     res.json(specialEvents)
   })
 
-  router.get('/channels' , verifyToken ,(req , res) => {
+  router.get('/channels' , (req , res) => {
     
     Channel.find({}).then(function (channels) {
-      res.send(channels);
+      res.json(channels);
       });
     
   })
